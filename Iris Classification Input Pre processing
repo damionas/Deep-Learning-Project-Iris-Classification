@@ -4,3 +4,30 @@ import tensorflow as tf
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
+
+
+iris_data = pd.read_csv('C:/Users/onata/Downloads/iris.csv')
+
+
+#A Label encoder is used to convert String to numeric values for the target variable
+
+from sklearn import preprocessing
+label_encoder = preprocessing.LabelEncoder()
+iris_data['Species'] = label_encoder.fit_transform(
+                                iris_data['Species'])
+
+#the input is then converted to numpy array
+np_iris = iris_data.to_numpy()
+
+#Separate feature and target variables
+X_data = np_iris[:,0:4]
+Y_data=np_iris[:,4]
+
+#Created a scaler model that is fit on the input data.
+scaler = StandardScaler().fit(X_data)
+
+#Scaled the numeric feature variables
+X_data = scaler.transform(X_data)
+
+#Converted target variable as a one-hot-encoding array
+Y_data = tf.keras.utils.to_categorical(Y_data,3)
