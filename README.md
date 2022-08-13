@@ -19,3 +19,19 @@ Prepare Input Data for Deep Learning
   Split into training and test datasets
   
   
+  
+  
+  
+  
+  
+  
+Creating a Model
+The model on Keras was created using the following model
+
+Number of hidden layers
+
+Number of nodes in each layer
+
+Activation functions
+
+Loss Function & Accuracy measurements
