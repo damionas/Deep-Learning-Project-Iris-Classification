@@ -34,3 +34,13 @@ plt.show()
 #Evaluated the model against the test dataset and print results
 print("\nEvaluation against Test Dataset :\n------------------------------------")
 model.evaluate(X_test,Y_test)
+
+
+
+model.save("iris_save")
+    
+
+loaded_model = keras.models.load_model("iris_save")
+
+
+loaded_model.summary()
