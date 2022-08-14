@@ -40,3 +40,5 @@ Loss Function & Accuracy measurements
 
 Training and evaluating the Model
 Training the model involves defining various training models and then perform forward and back propagation.
+
+Prediction with the model
